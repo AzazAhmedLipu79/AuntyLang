@@ -1,0 +1,83 @@
+[
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "shunen",
+        "kind": 2,
+        "importPath": "compile",
+        "description": "compile",
+        "peekOfCode": "def shunen(message):\n    print(message)\n# Compile regex patterns for tokenization\nTOKEN_REGEXES = [(name, re.compile(pattern)) for name, pattern in TOKEN_TYPES]\ndef lexer(code):\n    tokens = []\n    lines = code.split('\\n')\n    for line in lines:\n        print(\"Current line:\", line)\n        while line:",
+        "detail": "compile",
+        "documentation": {}
+    },
+    {
+        "label": "lexer",
+        "kind": 2,
+        "importPath": "compile",
+        "description": "compile",
+        "peekOfCode": "def lexer(code):\n    tokens = []\n    lines = code.split('\\n')\n    for line in lines:\n        print(\"Current line:\", line)\n        while line:\n            match = None\n            for token_name, token_regex in TOKEN_REGEXES:\n                pattern = token_regex.pattern\n                match = re.match(pattern, line)",
+        "detail": "compile",
+        "documentation": {}
+    },
+    {
+        "label": "TOKEN_TYPES",
+        "kind": 5,
+        "importPath": "compile",
+        "description": "compile",
+        "peekOfCode": "TOKEN_TYPES = [\n    ('KNOCK_KNOCK', r'knock knock aunty'),\n    ('COMMENT', r'!!.*'), \n    ('DISPLAY', r'shunen\\s*\\(\\s*\"([^\"]*)\"\\s*\\)'),\n    ('FOR_LOOP', r'tahole\\s*\\(\\s*tho\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*=\\s*(\\d+)\\s*;\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*<\\s*(\\d+)\\s*;\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*[\\+\\-]\\s*[\\+\\-]\\s*\\)\\s*{'),\n    ('WHILE_LOOP', r'jokhon\\s*\\(\\s*(hae)\\s*\\)\\s*{'),\n    ('BREAK', r'baad_den'),\n    ('CONTINUE', r'abar'),\n    ('ARRAY_DECLARATION', r'(tho|ar)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*=\\s*\\[\\s*(\\\".*?\\\"|\\d+|na|hae)(\\s*,\\s*(\\\".*?\\\"|\\d+|na|hae))*\\s*\\]'),\n    ('ARRAY_ITERATION', r'tahole\\s*\\(\\s*tho\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*=\\s*0\\s*;\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*<\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\.qty\\s*;\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*[\\+\\-]\\s*[\\+\\-]\\s*\\)\\s*{'),",
+        "detail": "compile",
+        "documentation": {}
+    },
+    {
+        "label": "TOKEN_REGEXES",
+        "kind": 5,
+        "importPath": "compile",
+        "description": "compile",
+        "peekOfCode": "TOKEN_REGEXES = [(name, re.compile(pattern)) for name, pattern in TOKEN_TYPES]\ndef lexer(code):\n    tokens = []\n    lines = code.split('\\n')\n    for line in lines:\n        print(\"Current line:\", line)\n        while line:\n            match = None\n            for token_name, token_regex in TOKEN_REGEXES:\n                pattern = token_regex.pattern",
+        "detail": "compile",
+        "documentation": {}
+    },
+    {
+        "label": "tokens",
+        "kind": 5,
+        "importPath": "compile",
+        "description": "compile",
+        "peekOfCode": "tokens = lexer(SAMPLE_CODE)\nfor token in tokens:\n    print(token)",
+        "detail": "compile",
+        "documentation": {}
+    },
+    {
+        "label": "line",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "line = 'tho amar_nam = \"Kamal\"'\npattern = r'(tho|ar)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*=\\s*\"(.*?)\"'\nmatch = re.match(pattern, line)\nif match:\n    keyword = match.group(1)\n    variable_name = match.group(2)\n    value = match.group(3)\n    print(\"Keyword:\", keyword)\n    print(\"Variable Name:\", variable_name)\n    print(\"Value:\", value)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "pattern",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "pattern = r'(tho|ar)\\s+([a-zA-Z_][a-zA-Z0-9_]*)\\s*=\\s*\"(.*?)\"'\nmatch = re.match(pattern, line)\nif match:\n    keyword = match.group(1)\n    variable_name = match.group(2)\n    value = match.group(3)\n    print(\"Keyword:\", keyword)\n    print(\"Variable Name:\", variable_name)\n    print(\"Value:\", value)\nelse:",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "match",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "match = re.match(pattern, line)\nif match:\n    keyword = match.group(1)\n    variable_name = match.group(2)\n    value = match.group(3)\n    print(\"Keyword:\", keyword)\n    print(\"Variable Name:\", variable_name)\n    print(\"Value:\", value)\nelse:\n    print(\"No match found.\")",
+        "detail": "test",
+        "documentation": {}
+    }
+]
